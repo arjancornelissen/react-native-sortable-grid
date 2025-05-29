@@ -125,13 +125,13 @@ class SortableGrid extends Component {
     return { deleteModeOn }
   }
 
-  componentWillMount = () => this.createTouchHandlers()
+  UNSAFE_componentWillMount = () => this.createTouchHandlers()
 
   componentDidMount = () => this.handleNewProps(this.props)
 
   componentWillUnmount = () => { if (this.tapTimer) clearTimeout(this.tapTimer) }
 
-  componentWillReceiveProps = (properties) => this.handleNewProps(properties)
+  UNSAFE_componentWillReceiveProps = (properties) => this.handleNewProps(properties)
 
   handleNewProps = (properties) => {
     this._assignReceivedPropertiesIntoThis(properties)
